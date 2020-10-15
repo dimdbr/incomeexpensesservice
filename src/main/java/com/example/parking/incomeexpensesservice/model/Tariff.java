@@ -1,9 +1,15 @@
 package com.example.parking.incomeexpensesservice.model;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
+import javax.transaction.Transactional;
+
 
 @Entity
 @Table(name = "tariffs",schema = "tariff_schema")
+@Proxy(lazy=false)
+@Transactional
 public class Tariff {
 
     @Id
@@ -20,6 +26,7 @@ public class Tariff {
     private  double gasTariff;
     @Column(name = "tariffdesc")
     private String tariffDesc;
+
     public Tariff(double placePrice, double waterTariff, double electricityTariff, double gasTariff, String tariffDesc) {
 
         this.placePrice = placePrice;

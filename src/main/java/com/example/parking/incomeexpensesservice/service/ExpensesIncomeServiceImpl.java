@@ -61,7 +61,7 @@ public class ExpensesIncomeServiceImpl implements ExpensesIncomeService {
         List<CommunalWorker> communalWorkers=communalWorkerRepository.findAll();
         List<Malfunction> malfunctions = malfunctionRepository.findAll();
         List<Accountant> accountants = accountantRepository.findAll();
-        Tariff tariff=tariffRepository.getOne(1);
+        Tariff tariff=tariffRepository.getOne(2);
 
 
         double payPriceTotal=0;

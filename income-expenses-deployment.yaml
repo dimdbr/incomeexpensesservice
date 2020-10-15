@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: income-expenses
+  name: income-expenses
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: income-expenses
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: income-expenses
+    spec:
+      containers:
+      - env:
+        - name: DB_SCHEMA
+          value: '"income_expenses_service"'
+        - name: DB_SERVER
+          value: '"postgres-parking"'
+        - name: POSTGRES_DB
+          value: '"Parking"'
+        - name: POSTGRES_PASSWORD
+          value: '"test"'
+        - name: POSTGRES_USER
+          value: '"test"'
+        image: dimdbr/parking-incomeexpensesservice
+        imagePullPolicy: ""
+        name: parking-incomeexpensesservice
+        ports:
+        - containerPort: 8081
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

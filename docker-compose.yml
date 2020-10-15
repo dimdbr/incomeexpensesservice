@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  income-expenses:
+    container_name: parking-incomeexpensesservice
+    image: dimdbr/parking-incomeexpensesservice
+    build: ./
+    environment:
+      - DB_SERVER="postgres-parking"
+      - POSTGRES_PASSWORD="test"
+      - POSTGRES_USER="test"
+      - POSTGRES_DB="Parking"
+      - DB_SCHEMA="income_expenses_service"
+    ports:
+      - 8081:8081
+      #depends_on:
+      #- postgres-parking
