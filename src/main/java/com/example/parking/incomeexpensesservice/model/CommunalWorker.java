@@ -24,7 +24,7 @@ public final  class CommunalWorker {
     private boolean isWinter;
 
 
-    public CommunalWorker(UUID cwId, String name, double salary, CW_Type cwType, boolean isWinter, String malfunctionId) {
+    public CommunalWorker(UUID cwId, String name, double salary, CW_Type cwType, boolean isWinter) {
         this.cwId = cwId;
         this.name = name;
         this.salary = salary;

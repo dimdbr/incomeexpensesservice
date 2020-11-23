@@ -23,6 +23,7 @@ public class IncomeexpensesserviceApplication {
     public static void main(String[] args) {
         SpringApplication.run(IncomeexpensesserviceApplication.class, args);
     }
+    /*
     @Bean
     public DataSource dataSource() {
 
@@ -51,5 +52,5 @@ public class IncomeexpensesserviceApplication {
         dataSource.addDataSourceProperty("password", "test");
         return dataSource;
     }
-
+*/
 }
